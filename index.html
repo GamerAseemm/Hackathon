@@ -17,6 +17,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#chatbot">Chatbot</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#about-us">About Us</a></li>
                     </ul>
                 </nav>
@@ -24,7 +25,7 @@
             </div>
         <div id="home" class="info">
           <div class="container">
-            <p class="title">AGRO PLUS</p>
+            <p class="title"><strong>AGRO PLUS</strong></p>
           </div>
             
             <p class="para-1">Agro Plus is an AI-powered chatbot designed specifically for agriculture and plant care.
@@ -53,38 +54,63 @@
     </section>
 
     <script>
-        const chatHistory = document.getElementById('chat-history');
-const userInput = document.getElementById('user-input');
-const form = document.getElementById('chat-form');
+   const chatHistory = document.getElementById('chat-history');
+        const userInput = document.getElementById('user-input');
+        const form = document.getElementById('chat-form');
 
-async function sendMessage() {
-  const userMessage = userInput.value;
-  userInput.value = ''; // Clear input field
-  console.log(userMessage)
-  try {
-    const response = await fetch('/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userInput: userMessage }),
-    });
+        function parseMarkdown(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Convert **text** to <strong>text</strong>
+                .replace(/^\s*\*\s+(.*)$/gm, '<li>$1</li>')        // Convert * text to <li>text</li>
+                .replace(/(?:^|\n)([^\n]*)/g, '<p>$1</p>')         // Convert text to <p>text</p>
+                .replace(/<\/li>\s*<p>/g, '</li>')                 // Cleanup any <p> after <li>
+                .replace(/<\/p><p><li>/g, '<li>')                  // Cleanup any <p> before <li>
+                .replace(/<\/li><\/p>/g, '</li>')                  // Cleanup any </li></p>
+                .replace(/<\/p><p>/g, '</p><br><p>');              // Ensure paragraphs are separated with a line break
+        }
 
-    const data = await response.json();
-    console.log(data)
-    const botMessage = data.response;
-    console.log(botMessage)
-    // Add chat message to the chat history
-    chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
-    chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
 
-    // Scroll to the bottom of the chat history
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-  } catch (error) {
-    console.error('Error:', error);
-    // Handle errors gracefully, e.g., display an error message to the user
-  }
-}
+                const target = document.querySelector(this.getAttribute('href'));
+
+                window.scroll({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        async function sendMessage() {
+            const userMessage = userInput.value;
+            userInput.value = ''; // Clear input field
+            console.log(userMessage);
+
+            try {
+                const response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ userInput: userMessage }),
+                });
+
+                const data = await response.json();
+                console.log(data);
+                let botMessage = data.response;
+                console.log(botMessage);
+
+                botMessage = parseMarkdown(botMessage);
+
+                chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+                chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+
+                chatHistory.scrollTop = chatHistory.scrollHeight;
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
 
 //Handle submission
 form.addEventListener('submit', async (event) => {
