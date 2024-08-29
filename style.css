@@ -40,6 +40,17 @@ body{
   
   nav li {
     margin-right: 80px;
+    display: block;
+  height: 100%;
+  margin-right: 30px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px #8e54e9;
+  transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   
   nav a {
@@ -51,9 +62,6 @@ body{
     font-weight: 300;
   }
   
-  nav a:hover {
-    text-decoration: underline;
-  }
 .info{
     padding-left: 25%;
     padding-right: 25%;
@@ -82,3 +90,17 @@ body{
     height: 100%;
     width: 100%;
 }
+.navbar li:after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    display: block;
+    transition: all 0.7s ease;
+    bottom: 0%;
+  }
+  .navbar li:hover::after {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+  }
