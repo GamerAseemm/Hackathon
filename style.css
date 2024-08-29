@@ -1,9 +1,84 @@
 html, body{
     margin: 0;
     background-size: 100%;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
 }
 body{
-    background-image: url(dark-green-background-7cp5yeak7r030pmf.jpg);
+    background-image: url(Green\ And\ White\ Aesthetic\ Background\ Instagram\ Story\ \(1\).png);
+    background-size: 100%;
     background-repeat: no-repeat;
     background-blend-mode: darken;
+}
+.navbar {
+    color: white; 
+    padding: 15px 0;
+    position: fixed; 
+    width: 100%; 
+    z-index: 1; 
+    justify-content: center;
+    padding-left: 30%;
+    text-align: center;
+    padding-top: 40px;
+    height: 200px;
+    background-image: url(Untitled_design__1_-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position-y: -45px;
+    background-position-x: -55px;
+    padding-left: 530px;
+} 
+  nav ul {
+    list-style-type: none; 
+    margin-left: 120;
+    padding-left: 100;
+    display: flex;
+  }
+  
+  nav li {
+    margin-right: 80px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.7s;
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+.info{
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 13%;
+    text-align: center;
+}
+.title{
+    font-size: 30px;
+    color: white;
+    font-weight: 350;
+}
+.para-1{
+    color: white;
+    font-size: larger;
+}
+.logo{
+    height: 200px;
+    width: 200px;
+    z-index: 3;  
+}
+
+.input-div{
+    height: 200px;
+}
+#chatbot{
+    height: 100%;
+    width: 100%;
 }
