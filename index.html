@@ -8,7 +8,6 @@
     <link rel="icon" href="Untitled_design__1_-removebg-preview.png" type="image/icon type">
 </head>
 <body>
-    <section id="#home">
         <div class="imgdiv">
         </div>
         
@@ -23,77 +22,96 @@
                 </nav>
 
             </div>
-        <div class="info">
-            <h1 class="title">AGRO PLUS</h1>
+        <div id="home" class="info">
+          <div class="container">
+            <p class="title">AGRO PLUS</p>
+          </div>
+            
             <p class="para-1">Agro Plus is an AI-powered chatbot designed specifically for agriculture and plant care.
                  It combines image recognition capabilities with natural language processing to provide farmers with valuable 
-                 information about their plants</p>
-                 <br><br>
-            
+                 information about their plants</p>            
         </div>
-    </section>
-    
     <section id="chatbot">
+
         <div id="chat-container">
-            <h1>Chatbot</h1>
-            <div id="chat-history"></div>
+          
+            <h1>JAI Chatbot</h1>
+            <div id="chat-history">
+              <div id="loader">
+                <img src="loader.png" alt="Loading..."> 
+              </div>
+            </div>
             <form id="chat-form">
-              <input type="text" id="user-input" placeholder="Enter your prompt">
-              <button type="submit">Send</button>
+              <input type="text" id="user-input" placeholder="Enter your Condition">
+              <button type="submit">Enter</button>
             </form>
           </div>
-          <div id="loader">
-            <img src="loader.png" alt="Loading..."> 
-          </div>
+          
+    </section>
+    <section id="about-us">
+     
     </section>
 
     <script>
         const chatHistory = document.getElementById('chat-history');
-        const userInput = document.getElementById('user-input');
-        const form = document.getElementById('chat-form');
-    
-        async function sendMessage() {
-          const userMessage = userInput.value;
-          userInput.value = ''; // Clear input field
-          console.log(userMessage)
-          try {
-            const response = await fetch('/chat', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ userInput: userMessage }),
-            });
-    
-            const data = await response.json();
-            console.log(data)
-            const botMessage = data.response;
-            console.log(botMessage)
-            // Add chat message to the chat history
-            chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
-            chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
-    
-            // Scroll to the bottom of the chat history
-            chatHistory.scrollTop = chatHistory.scrollHeight;
-          } catch (error) {
-            console.error('Error:', error);
-            // Handle errors gracefully, e.g., display an error message to the user
-          }
-        }
-    
-        //Handle submission
-        form.addEventListener('submit', (event) => {
-          event.preventDefault(); // Prevent form submission
-          const loader = document.getElementById('loader');
-          loader.style.display = 'block'; // Show the loader
-          loader.style.opacity = '1'; // Make the loader visible
-          sendMessage().finally(() => {
-            loader.style.opacity = '0'; // Fade out the loader
-            setTimeout(() => {
-              loader.style.display = 'none'; // Hide the loader after fading out
-            }, 500); // Match the transition duration
-          });
-        });
+const userInput = document.getElementById('user-input');
+const form = document.getElementById('chat-form');
+
+async function sendMessage() {
+  const userMessage = userInput.value;
+  userInput.value = ''; // Clear input field
+  console.log(userMessage)
+  try {
+    const response = await fetch('/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ userInput: userMessage }),
+    });
+
+    const data = await response.json();
+    console.log(data)
+    const botMessage = data.response;
+    console.log(botMessage)
+    // Add chat message to the chat history
+    chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+    chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+
+    // Scroll to the bottom of the chat history
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+  } catch (error) {
+    console.error('Error:', error);
+    // Handle errors gracefully, e.g., display an error message to the user
+  }
+}
+
+//Handle submission
+form.addEventListener('submit', async (event) => {
+  event.preventDefault(); // Prevent form submission
+  showLoader();
+
+  try {
+    await sendMessage();
+    hideLoader();
+  } catch (error) {
+    console.error('Error:', error);
+    // Handle errors gracefully, e.g., display an error message to the user
+  }
+});
+
+function showLoader() {
+  document.getElementById('loader').style.display = 'block';
+  document.getElementById('loader').style.opacity = '1';
+}
+
+function hideLoader() {
+  setTimeout(() => {
+    document.getElementById('loader').style.opacity = '0';
+    document.getElementById('loader').style.display = 'none';
+  }, 0);
+}
+
       </script>
 </body>
 </html>

@@ -1,17 +1,17 @@
-html, body{
+html{
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-snap-type: mandatory;
     margin: 0;
-    background-size: 100%;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-html{
-    scroll-behavior: smooth;
-}
 body{
     background-image: url(Green\ And\ White\ Aesthetic\ Background\ Instagram\ Story\ \(1\).png);
-    background-size: 100%;
+    position: sticky;
+    background-size: 106%;
     background-repeat: no-repeat;
-    background-blend-mode: darken;
+   background-attachment: fixed;
 }
 .navbar {
     color: white; 
@@ -29,20 +29,22 @@ body{
     background-size: 300px;
     background-position-y: -45px;
     background-position-x: -55px;
-    padding-left: 530px;
+    padding-left: 430px;
+    user-select: none;
 } 
   nav ul {
     list-style-type: none; 
-    margin-left: 120;
-    padding-left: 100;
+    margin-left: 70;
+    padding-left: 70;
     display: flex;
   }
-  
+  nav ul li a{
+    scroll-behavior: smooth;
+  }
   nav li {
-    margin-right: 80px;
     display: block;
   height: 100%;
-  margin-right: 30px;
+  margin-right: 130px;
   font-size: 20px;
   position: relative;
   display: flex;
@@ -68,11 +70,7 @@ body{
     padding-top: 13%;
     text-align: center;
 }
-.title{
-    font-size: 30px;
-    color: white;
-    font-weight: 350;
-}
+
 .para-1{
     color: white;
     font-size: larger;
@@ -105,14 +103,6 @@ body{
     background-color: #fff;
   }
 
-  #chat-container {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    width: 400px;
-  }
-  
   h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -161,16 +151,18 @@ body{
   }
   
   #loader {
-    display: none; /* Hide by default */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0; 
-    transition: opacity 0.5s ease;
-    animation: fadeIn 0.5s ease; /* Animation for appearing */
-    animation: initialMovement 1s ease forwards;
-  }
+
+      display: none;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0; 
+      transition: opacity 0.5s ease;
+      animation: fadeIn 0.5s ease; 
+      animation: initialMovement 1s ease forwards;
+
+}
   
   #loader img {
     width: 150px;
@@ -196,3 +188,31 @@ body{
     }
   }
   
+  #chat-container {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(62, 62, 62, 0.614);
+    width: 400px;
+    margin-left: 35%;
+    margin-top: 20%;
+    margin-bottom: 10%;
+    user-select: none;
+    z-index: 3;
+  }
+  .about-us1{
+    margin-top: 20%;
+    margin-bottom: 10%;
+  }
+  .container{
+    display: inline-block;
+  }
+  .title{
+    font-size: 70px;
+    color: white;
+    font-weight: 350;
+    padding-top: 5%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 5%
+}
