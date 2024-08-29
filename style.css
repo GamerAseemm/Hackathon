@@ -1,0 +1,9 @@
+html, body{
+    margin: 0;
+    background-size: 100%;
+}
+body{
+    background-image: url(dark-green-background-7cp5yeak7r030pmf.jpg);
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+}
