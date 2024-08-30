@@ -135,7 +135,7 @@ nav a {
     border-radius: 10px;
     margin-bottom: 5px;
     width: auto;
-    font-size: 30px;
+    font-size: 21px;
   }
   
   .bot-message {
@@ -144,7 +144,7 @@ nav a {
     background-color: #e0f0e0;
     border-radius: 10px;
     margin-bottom: 5px;
-    font-size: 30px;
+    font-size: 21px;
   }
   
   form {
@@ -238,13 +238,18 @@ nav a {
   }
   .title{
     font-size: 70px;
-    color: white;
     font-weight: 350;
     padding-top: 10px;
     white-space: nowrap;
     overflow: hidden;
     padding-bottom: 5%;
     text-align: center;
+    background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
 }
 input[type="text"] {
   margin-top: 15px;
@@ -391,16 +396,24 @@ button {
 }
 #about-us{
   padding-top: 5%;
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 220px;
 }
 .title-1{
   font-size: 70px;
-  color: white;
   font-weight: 350;
   padding-top: 10px;
   white-space: nowrap;
   overflow: hidden;
-  padding-bottom: 2%;
   text-align: center;
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
 }
 footer{
   left: 0;
@@ -411,4 +424,44 @@ footer{
   text-align: center;
   font-size: 20px;
   color: white;
+}
+.parabox1 {
+  float: left;
+  width: 30%;
+  height: 280px;
+}
+
+.parabox2 {
+  float: left;
+  width: 30%;
+  height: 280px;
+  margin-left: 60px;
+}
+
+.parabox3 {
+  float: right;
+  width: 30%;
+  height: 280px;
+}
+.faq-titletext{
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 70px;
+}
+.agro-title{
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 40px;
+}
+.intro1{
+  font-weight: 400;
+  font-size: 30px;
 }
