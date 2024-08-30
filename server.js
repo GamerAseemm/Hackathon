@@ -33,7 +33,7 @@ async function runChat(userInput) {
     history: [
       {
         role: "user",
-        parts: [{ text: "You are JAI, your purpose is to only answer questions based on agriculture, any question unrelated to agriculture will be" }],
+        parts: [{ text: "You are AGRO AI, your purpose is to only answer questions based on agriculture, any question unrelated to agriculture will be" }],
       },
     ],
   });

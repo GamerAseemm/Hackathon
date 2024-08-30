@@ -78,7 +78,14 @@ nav a {
 
 .para-1{
     color: white;
-    font-size: larger;
+    font-size: 25px; 
+    text-align: center;
+}
+.para-2{
+  color: white;
+  font-size: 25px; 
+  text-align: center;
+  padding-bottom: 15%;
 }
 .logo{
     height: 200px;
@@ -149,7 +156,7 @@ nav a {
     border-radius: 5px;
   }
   
-  button {
+  .enter {
     margin-top: 15px;
     background-color: #4CAF50;
     color: white;
@@ -160,7 +167,7 @@ nav a {
     transition: background-color 0.3s ease, transform 0.3s ease; /* Animation for background color and transform */
   }
   
-  button:hover {
+  .enter:hover {
       background-color: #45a049;
       transform: scale(1.05); 
   }
@@ -231,10 +238,10 @@ nav a {
     font-size: 70px;
     color: white;
     font-weight: 350;
-    padding-top: 5%;
+    padding-top: 10px;
     white-space: nowrap;
     overflow: hidden;
-    padding-bottom: 5%
+    text-align: center;
 }
 input[type="text"] {
   margin-top: 15px;
@@ -305,7 +312,6 @@ input[type="text"]:focus {
   position: absolute;
   margin-left: 20px;
   margin-top: 4px;
-  z-index: 5;
   font-size: 42px;
   line-height: 100%;
   -webkit-user-select: none;    
@@ -368,4 +374,24 @@ input[type="text"]:focus {
   margin-left: 32%;
   transition: 0.7s;
   rotate: (360deg);
+}
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 180px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.mySlides {
+  width: 320px;
+  height: 180px; flex-shrink: 0;
+}
+.aboutustext{
+  width: 70%;
+  padding-left: 15%;
 }
