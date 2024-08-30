@@ -94,7 +94,6 @@
       </div>
     </div>
     </section>
-
     <script>
    const chatHistory = document.getElementById('chat-history');
         const userInput = document.getElementById('user-input');
@@ -102,7 +101,7 @@
 
         function parseMarkdown(text) {
             return text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Convert **text** to <strong>text</strong>
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  
                 .replace(/^\s*\*\s+(.*)$/gm, '<li>$1</li>')        // Convert * text to <li>text</li>
                 .replace(/(?:^|\n)([^\n]*)/g, '<p>$1</p>')         // Convert text to <p>text</p>
                 .replace(/<\/li>\s*<p>/g, '</li>')                 // Cleanup any <p> after <li>

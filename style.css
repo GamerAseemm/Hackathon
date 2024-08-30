@@ -69,7 +69,6 @@ nav a {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 300;
 }
-
 .info{
     padding-left: 25%;
     padding-right: 25%;
@@ -219,6 +218,7 @@ nav a {
     background-color: rgba(94, 167, 89, 0.573);
     border-radius: 12px;
     border: 1px solid rgba(14, 143, 16, 0.125);
+    backdrop-filter: blur(10px);
   }
   .about-us1{
     margin-top: 20%;
@@ -253,7 +253,8 @@ input[type="text"]:focus {
 }
 .faq-header{
   font-size: 42px;
-  padding-left: 24px;
+  width: 100%;
+  justify-content: center;
   padding-top: 40px;
 }
 
@@ -319,10 +320,10 @@ input[type="text"]:focus {
 }
 
 .panel:checked ~ .plus {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .panel {
