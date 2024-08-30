@@ -33,6 +33,7 @@ body{
   margin: 0 10px; 
   left: 50%; 
   transform: translateX(-50%); 
+  margin-top: 20px;
 }
 
 .navbar nav {
@@ -241,7 +242,7 @@ nav a {
     padding-top: 10px;
     white-space: nowrap;
     overflow: hidden;
-    text-align: center;
+    padding-bottom: 5%
 }
 input[type="text"] {
   margin-top: 15px;
@@ -371,27 +372,7 @@ input[type="text"]:focus {
   padding-left: 10px;
 }
 .plus{
-  margin-left: 32%;
+  margin-left: 35%;
   transition: 0.7s;
   rotate: (360deg);
-}
-.slider {
-    position: relative;
-    overflow: hidden;
-    width: 320px;
-    height: 180px;
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.mySlides {
-  width: 320px;
-  height: 180px; flex-shrink: 0;
-}
-.aboutustext{
-  width: 70%;
-  padding-left: 15%;
 }
