@@ -13,6 +13,9 @@ body{
     background-repeat: no-repeat;
    background-attachment: fixed;
 }
+.imgdiv{
+  display: none;
+}
 .navbar {
   color: white;
   padding: 15px;
@@ -624,24 +627,29 @@ nav a {
       width: 100%;
   }
 }
-
-@media (max-width: 1080) {
+@media (max-width: 1080px) {
   body {
-      background-size: cover;
-  }
-
-  .navbar {
+    background-size: cover;
+}
+#imgdiv{
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+.navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    width: 90%;
+    width: 70%;
     left: 50%;
     transform: translateX(-50%);
     margin-top: 10px;
     padding: 10px;
-    background-size: 50px;
     height: auto;
+    background-position: -100%;
 }
 
 nav ul {
@@ -654,142 +662,83 @@ nav ul {
 
 nav ul li {
     margin-right: 0;
+    font-size: 40px;
+}
+
+nav a {
+    font-size: 40px;
+}
+
+.info {
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 20%;
+}
+
+.title {
+    font-size: 70px;
+}
+
+.para-1, .para-2 {
+    font-size: 40px;
+}
+
+#chat-container {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+}
+
+.agro-title {
+    font-size: 50px;
+}
+
+.faq-content {
+  align-items: center;
+    width: 41%;
+  }
+
+.faq-titletext, .title-1 {
+    font-size: 70px;
+}
+
+.aboutustext {
     font-size: 18px;
 }
 
-nav a {
-  font-size: 25px;
-}
-
-.div1 {
-  display: none;
-}
-
-  .info {
-      padding-left: 10%;
-      padding-right: 10%;
-      padding-top: 20%;
-  }
-
-  .title {
-      font-size: 40px;
-  }
-
-  .para-1, .para-2 {
-      font-size: 18px;
-  }
-
-  #chat-container {
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
-      margin-bottom: 50px;
-  }
-
-  .agro-title {
-      font-size: 30px;
-  }
-
-  .faq-content {
-      width: 90%;
-  }
-
-  .faq-titletext, .title-1 {
-      font-size: 50px;
-  }
-
-  .aboutustext {
-      font-size: 18px;
-  }
-
-  .parabox1, .parabox2, .parabox3 {
-      float: none;
-      width: 100%;
-      height: auto;
-      margin-left: 0;
-      margin-bottom: 20px;
-  }
-
-  footer {
-      position: relative;
-  }
-
-  .faq-header {
-      margin-top: 5%;
-  }
-
-  .faq-question {
-      padding: 10px 0;
-  }
-
-  input[type="text"] {
-      padding: 10px;
-  }
-
-  .enter, button {
-      padding: 8px 12px;
-  }
-
-  #loader img {
-      width: 100px;
-  }
-}
-
-/* Styles for very small devices like phones */
-@media (max-width: 480px) {
-  .navbar {
-    flex-direction: row;
+.parabox1, .parabox2, .parabox3 {
+    float: none;
     width: 100%;
-    padding: 7px;
     height: auto;
+    margin-left: 0;
+    margin-bottom: 20px;
 }
 
-nav ul li {
-    font-size: 14px;
-    padding-left: 2%;
+footer {
+    position: relative;
 }
 
-nav a {
-  font-size: 25px;
+.faq-header {
+    margin-top: 5%;
 }
 
-.div1 {
-  display: none;
+.faq-question {
+    padding: 10px 0;
+    font-size: 100px;
 }
 
-  .info {
-      padding-left: 5%;
-      padding-right: 5%;
-      padding-top: 30%;
-  }
+input[type="text"] {
+    padding: 12px;
+    font-size: 20px;
+}
 
-  .title {
-      font-size: 30px;
-  }
+.enter, button {
+    padding: 10px 15px;
+    font-size: 20px;
+}
 
-  .para-1, .para-2 {
-      font-size: 16px;
-  }
-
-  #chat-container {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-  }
-
-  .faq-titletext, .title-1 {
-      font-size: 40px;
-  }
-
-  .aboutustext {
-      font-size: 16px;
-  }
-
-  .parabox1, .parabox2, .parabox3 {
-      height: auto;
-  }
-
-  .faq-content {
-      width: 100%;
-  }
+#loader img {
+    width: 120px;
+}
 }
