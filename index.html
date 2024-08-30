@@ -109,13 +109,18 @@
                 });
 
                 const data = await response.json();
-                let botMessage = data.candidates[0].outputText;
-                console.log(botMessage);
+                if (data.candidates && data.candidates.length > 0) {
+    let botMessage = data.candidates[0].outputText;
+    console.log(botMessage);
+    botMessage = parseMarkdown(botMessage);
+    chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+    chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
+} else {
+    console.error('No candidates found in response:', data);
+    chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
+    chatHistory.innerHTML += `<div class="bot-message">Sorry, I couldn't generate a response. Please try again.</div>`;
+}
 
-                botMessage = parseMarkdown(botMessage);
-
-                chatHistory.innerHTML += `<div class="user-message">${userMessage}</div>`;
-                chatHistory.innerHTML += `<div class="bot-message">${botMessage}</div>`;
                 chatHistory.scrollTop = chatHistory.scrollHeight;
             } catch (error) {
                 console.error('Error:', error);
