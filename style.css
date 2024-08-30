@@ -33,6 +33,7 @@ body{
   margin: 0 10px; 
   left: 50%; 
   transform: translateX(-50%); 
+  margin-top: 20px;
 }
 
 .navbar nav {
@@ -78,7 +79,8 @@ nav a {
 
 .para-1{
     color: white;
-    font-size: larger;
+    font-size: 30px;
+    user-select: none;
 }
 .logo{
     height: 200px;
@@ -234,7 +236,7 @@ nav a {
     padding-top: 5%;
     white-space: nowrap;
     overflow: hidden;
-    padding-bottom: 5%
+    user-select: none;
 }
 input[type="text"] {
   margin-top: 15px;
@@ -365,7 +367,25 @@ input[type="text"]:focus {
   padding-left: 10px;
 }
 .plus{
-  margin-left: 32%;
+  margin-left: 35%;
   transition: 0.7s;
   rotate: (360deg);
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-top: 100%;
+  height: 50px;
+  padding-top: 0;
+  font-size: 20px;
+  user-select: none;
+}
+.faq-titletext{
+  background: -webkit-linear-gradient(#fd8803, #e0f0e0, #26ff00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
