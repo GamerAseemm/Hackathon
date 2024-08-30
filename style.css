@@ -131,7 +131,7 @@ nav a {
   .user-message {
     text-align: right;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: #71c543;
     border-radius: 10px;
     margin-bottom: 5px;
     width: auto;
@@ -141,7 +141,7 @@ nav a {
   .bot-message {
     text-align: left;
     padding: 10px;
-    background-color: #e0f0e0;
+    background-color: #cadcc0;
     border-radius: 10px;
     margin-bottom: 5px;
     font-size: 21px;
