@@ -242,7 +242,8 @@ nav a {
     padding-top: 10px;
     white-space: nowrap;
     overflow: hidden;
-    padding-bottom: 5%
+    padding-bottom: 5%;
+    text-align: center;
 }
 input[type="text"] {
   margin-top: 15px;
@@ -375,4 +376,14 @@ input[type="text"]:focus {
   margin-left: 35%;
   transition: 0.7s;
   rotate: (360deg);
+}
+button {
+  margin-top: 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animation for background color and transform */
 }
